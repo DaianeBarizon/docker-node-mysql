@@ -75,7 +75,7 @@ npm install express
 Após isso criar a pasta src > com arquivo index.js
 Trabalhando conexão
 
-<image>
+<p aling="center"><image src="image/dockerfilenode.png"></p>
 
 Agora para adicionar o ip do container rode o comando:
 ```
