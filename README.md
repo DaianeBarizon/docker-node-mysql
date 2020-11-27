@@ -58,7 +58,8 @@ select * from users
 
 <p aling="center"><image src="image/verifica-tabela.png"></p>
 
-Trabalhando com volumes para os dados não sumir e refletir no outro container, para que não perca as informações do banco.
+Obs: Trabalhando com volumes para os dados não sumir e refletir no outro container,</br>
+para que não perca as informações do banco.
 
 ### Criando api com node
 
@@ -72,10 +73,10 @@ Instalando depêndencia:
 npm install express
 ```
 
-Após isso criar a pasta src > com arquivo index.js
+Após isso criar a pasta src > com arquivo index.js</br>
 Trabalhando conexão
 
-<p aling="center"><image src="image/dockerfilenode.png"></p>
+<p aling="center"><image src="image/dockerfile-node.png"></p>
 
 Agora para adicionar o ip do container rode o comando:
 ```
