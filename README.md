@@ -62,14 +62,14 @@ Trabalhando com volumes para os dados não sumir e refletir no outro container, 
 
 ### Criando api com node
 
-Criando o projeto:
+Criando o arquivo package.json:
 ```
 npm init -y
 ```
 
-Instalando dependências para rotas:
+Instalando depêndencia:
 ```
-npm install --save-dev express
+npm install express
 ```
 
 Após isso criar a pasta src > com arquivo index.js
@@ -96,12 +96,23 @@ sudo docker image ls
 
 <p aling="center"><image src="image/docker-image.png"></p>
 
-Rodando o container na porta 9002:
+Rodando o container na porta 9002 mapeando:
 ```
 docker run -d -v $(pwd)/api:/home/node/app -p 9002:9002 --link dbfaeterj --rm --name apifaeterj node-image
 ```
 
-Fazendo deploy
+Criando docker-compose (defini como cada container deve se comportar dentro da aplicação):
+Volumes defini para qual pasta eu quero refletir minhas alterações
+
+<image>
+
+Instalando nodemon:
+```
+npm install nodemon
+```
+<p aling="center"><image src="image/nodemon.png"></p>
+
+Utilizando docker compose:
 ```
 sudo docker-compose up
 ```
