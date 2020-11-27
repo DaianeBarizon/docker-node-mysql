@@ -69,7 +69,7 @@ npm init -y
 
 Instalando dependências para rotas:
 ```
-npm install --save-dev nodemon
+npm install --save-dev express
 ```
 
 Após isso criar a pasta src > com arquivo index.js
@@ -82,7 +82,7 @@ Agora para adicionar o ip do container rode o comando:
 sudo docker inspect dbfaeterj
 ```
 
-<image>
+<p aling="center"><image src="image/inspect.png"></p>
 
 Depois vamos criar a imagem do node com o comando:
 ```
@@ -94,10 +94,20 @@ Para ver a imagem basta:
 sudo docker image ls 
 ```
 
+<p aling="center"><image src="image/docker-image.png"></p>
+
 Rodando o container na porta 9002:
 ```
 docker run -d -v $(pwd)/api:/home/node/app -p 9002:9002 --link dbfaeterj --rm --name apifaeterj node-image
 ```
 
+Fazendo deploy
+```
+sudo docker-compose up
+```
+<p aling="center"><image src="image/deploy.png"></p>
+
+
 Estrutura do projeto
 
+<p aling="center"><image src="image/estrutura.png"></p>
