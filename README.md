@@ -56,7 +56,7 @@ Verificando se a tabela foi criada:
 select * from users
 ```
 
-<image>
+<p aling="center"><image src="image/verifica-tabela.png"></p>
 
 Trabalhando com volumes para os dados não sumir e refletir no outro container, para que não perca as informações do banco.
 
