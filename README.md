@@ -6,7 +6,7 @@ Projeto gerado com intuito de aprendizado para a disciplina de so2
 Criar pasta api > db
 Entrar na pasta db > Criar arquivo Dokerfile para configurar a imagem do banco
 
-<image>
+<p aling="center"><image src="image/dockerfile-mysql.png"></p>
 
 Acesse a pasta `./api` no terminal e execute:
 ```
@@ -30,7 +30,7 @@ sudo docker ps
 
 Após isso crio dentro da pasta db um arquivo chamado script.sql criando o banco em mySql
 
-<image>
+<p aling="center"><image src="image/db.scriptsql.png"></p>
 
 Vamos executar agora comandos dentro de um container que está rodando, após esse comando ele vai criar a tabela e seus valores
 ```
@@ -98,4 +98,6 @@ Rodando o container na porta 9002:
 ```
 docker run -d -v $(pwd)/api:/home/node/app -p 9002:9002 --link dbfaeterj --rm --name apifaeterj node-image
 ```
+
+Estrutura do projeto
 
