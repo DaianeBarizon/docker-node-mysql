@@ -38,8 +38,7 @@ const HOST = '0.0.0.0';
 const app = express();
 
 const con = mysql.createConnection({
-    host: '172.17.0.6',
-    //host: 'localhost',
+    host: '172.17.0.6', //IP CONTAINER
     user: 'root',
     password: 'dbfaeterj',
     database: 'dbfaeterjso2'
@@ -55,14 +54,14 @@ con.connect((err) => {
 
 
 app.get('/users', function(req, res){
-    res.json({ name: 'Flavio' })
-    /*con.connect(function(err) {
+    //res.json({ name: 'Flavio' })
+    con.connect(function(err) {
         if (err) throw err;
         con.query("SELECT * FROM users", function (err, result, fields) {
           if (err) throw err;
           console.log(result);
         });
-    });*/
+    });
 });
 
 app.post('/user', function(req, res){

@@ -77,6 +77,8 @@ Após isso criar a pasta src > com arquivo index.js</br>
 Trabalhando conexão
 
 <p aling="center"><image src="image/dockerfile-node.png"></p>
+<p aling="center"><image src="image/api-node-1.png"></p>
+<p aling="center"><image src="image/api-node-2.png"></p>
 
 Agora para adicionar o ip do container rode o comando:
 ```
@@ -105,7 +107,7 @@ docker run -d -v $(pwd)/api:/home/node/app -p 9002:9002 --link dbfaeterj --rm --
 Criando docker-compose (defini como cada container deve se comportar dentro da aplicação):
 Volumes defini para qual pasta eu quero refletir minhas alterações
 
-<image>
+<p aling="center"><image src="image/compose.png"></p>
 
 Instalando nodemon:
 ```
