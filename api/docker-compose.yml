@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+    app:
+        build: .
+        command: npm start
+        ports:
+            - "9002:9002"
+        volumes:
+            - .:/usr/app
+    database:
+        image: mysql-container
+        ports:
+            - "3306:3036"
+        environment:
+            MYSQL_ROOT_PASSWORD: dbfaeterj
+            MYSQL_DATABASE: dbfaeterjso2
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root

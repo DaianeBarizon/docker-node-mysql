@@ -1,0 +1,22 @@
+{
+  "name": "users-api",
+  "version": "1.0.0",
+  "description": "Criando api node com docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon ./src/index.js"
+  },
+  "keywords": [
+    "Docker"
+  ],
+  "author": "Daiane Barizon",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
