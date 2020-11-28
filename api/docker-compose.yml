@@ -1,4 +1,4 @@
-version: "3"
+version: "3.5"
 
 services:
     app:
@@ -8,6 +8,11 @@ services:
             - "9002:9002"
         volumes:
             - .:/usr/app
+        networks:
+            - prod
+        depends_on:
+            - database
+
     database:
         image: mysql-container
         ports:
@@ -17,5 +22,16 @@ services:
             MYSQL_DATABASE: dbfaeterjso2
             MYSQL_USER: root
             MYSQL_PASSWORD: root
+        volumes:
+            - db-volume:/var/lib/mysql
+        networks:
+            - prod
 
+volumes:
+    db-volume:
+
+networks:
+  prod:
+    driver: bridge
+    
 

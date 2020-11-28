@@ -38,28 +38,28 @@ const HOST = '0.0.0.0';
 const app = express();
 
 const con = mysql.createConnection({
-    host: '172.17.0.6', //IP CONTAINER
+    host: 'database', //IP CONTAINER
+    port: 3306,
     user: 'root',
     password: 'dbfaeterj',
     database: 'dbfaeterjso2'
 });
 
-con.connect((err) => {
+/*con.connect((err) => {
     if (err) {
         console.log('Erro connecting to database...', err)
         return
     }
     console.log('Connection established!')
-})
+})*/
 
 
 app.get('/users', function(req, res){
-    //res.json({ name: 'Flavio' })
     con.connect(function(err) {
         if (err) throw err;
         con.query("SELECT * FROM users", function (err, result, fields) {
           if (err) throw err;
-          console.log(result);
+          res.json(result)
         });
     });
 });
@@ -74,13 +74,13 @@ app.post('/user', function(req, res){
     });
 });
 
-con.end((err) => {
+;/*con.end((err) => {
     if(err) {
         console.log('Erro to finish connection...', err)
         return 
     }
     console.log('The connection was finish...')
-})
+})*/
 
 app.listen(PORT, HOST, function() {
     console.log('Listening on port 9002');

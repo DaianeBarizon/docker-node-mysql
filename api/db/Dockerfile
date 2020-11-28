@@ -1,2 +1,3 @@
 FROM mysql:5.7
-ENV MYSQL_ROOT_PASSWORD dbfaeterj
+
+COPY ./db_create/ /docker-entrypoint-initdb.d/
