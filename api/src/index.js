@@ -1,10 +1,14 @@
-/*const express = require('express');
+const express = require('express');
+const bodyParser = require('body-parser');
 const mysql = require('mysql');
 
 const app = express();
 
+const jsonParser = bodyParser.json();
+
 const connection = mysql.createConnection({
-  host: 'dbfaeterj',
+  host: 'database',
+  port: 3306,
   user: 'root',
   password: 'dbfaeterj',
   database: 'dbfaeterjso2'
@@ -20,68 +24,31 @@ app.get('/users', function(req, res) {
       console.log(error);
     };
 
-    res.send(results.map(item => ({ name: item.name, date: item.date })));
+    res.json(results);
   });
 });
 
+app.post('/users', jsonParser, function(req, res) {
+  connection.query(
+    'INSERT INTO users(name, date) VALUES (?,?);',
+    [req.body.name, req.body.date],
+    function (error, result) {
 
-app.listen(3000, '0.0.0.0', function() {
-  console.log('Listening on port 3000');
-})*/
-
-const express = require('express');
-const mysql = require('mysql');
-
-const PORT = 9002;
-const HOST = '0.0.0.0';
-
-const app = express();
-
-const con = mysql.createConnection({
-    host: 'database', //IP CONTAINER
-    port: 3306,
-    user: 'root',
-    password: 'dbfaeterj',
-    database: 'dbfaeterjso2'
-});
-
-/*con.connect((err) => {
-    if (err) {
-        console.log('Erro connecting to database...', err)
-        return
-    }
-    console.log('Connection established!')
-})*/
-
-
-app.get('/users', function(req, res){
-    con.connect(function(err) {
-        if (err) throw err;
-        con.query("SELECT * FROM users", function (err, result, fields) {
-          if (err) throw err;
-          res.json(result)
+      if (error) { 
+        console.log(error);
+        return res.status(500).send({
+          error: error,
+          response: null
         });
-    });
+      }
+
+      res.status(201).send({
+        mensagem: 'Inserido com sucesso!',
+        id: result.insertId
+      })
+  });
 });
 
-app.post('/user', function(req, res){
-    const user = { name: 'Henrique', data: '2010-03-15 10:30:00' };
-    con.query(
-        'INSERT INTO users SET ?', user, (err, row) => {
-        if (err) throw err
-    
-        console.log(`New user added with ID: ${row.insertId}`)
-    });
-});
-
-;/*con.end((err) => {
-    if(err) {
-        console.log('Erro to finish connection...', err)
-        return 
-    }
-    console.log('The connection was finish...')
-})*/
-
-app.listen(PORT, HOST, function() {
-    console.log('Listening on port 9002');
-});
+app.listen(9002, '0.0.0.0', function() {
+  console.log('Listening on port 9002');
+})
