@@ -1,3 +1,13 @@
+# Como rodar o projeto
+
+dentro da pasta > api
+
+```
+sudo docker-compose up
+```
+
+Em `http://localhost:9002/users` você encontra o get e faz a inserções com post :)
+
 # Passo-a-passo docker + mysql + node
 
 Projeto gerado com intuito de aprendizado para a disciplina de so2
@@ -55,8 +65,6 @@ Verificando se a tabela foi criada:
 ```
 select * from users
 ```
-
-<p aling="center"><image src="image/verifica-tabela.png"></p>
 
 Obs: Trabalhando com volumes para os dados não sumir e refletir no outro container,</br>
 para que não perca as informações do banco.
@@ -125,3 +133,9 @@ sudo docker-compose up
 Estrutura do projeto
 
 <p aling="center"><image src="image/estrutura.png"></p>
+
+
+Resultado
+
+<p aling="center"><image src="image/api-get.png"></p>
+<p aling="center"><image src="image/api-post.png"></p>
