@@ -16,7 +16,7 @@ Projeto gerado com intuito de aprendizado para a disciplina de so2
 Criar pasta api > db
 Entrar na pasta db > Criar arquivo Dokerfile para configurar a imagem do banco
 
-<p aling="center"><image src="image/dockerfile-mysql.png"></p>
+<p aling="center"><image src="image/1dockerfile-mysql.png"></p>
 
 Acesse a pasta `./api` no terminal e execute:
 ```
@@ -40,7 +40,7 @@ sudo docker ps
 
 Após isso crio dentro da pasta db um arquivo chamado script.sql criando o banco em mySql
 
-<p aling="center"><image src="image/db.scriptsql.png"></p>
+<p aling="center"><image src="image/1db.scriptsql.png"></p>
 
 Vamos executar agora comandos dentro de um container que está rodando, após esse comando ele vai criar a tabela e seus valores
 ```
@@ -84,9 +84,9 @@ npm install express
 Após isso criar a pasta src > com arquivo index.js</br>
 Trabalhando conexão
 
-<p aling="center"><image src="image/dockerfile-node.png"></p>
-<p aling="center"><image src="image/api-node-1.png"></p>
-<p aling="center"><image src="image/api-node-2.png"></p>
+<p aling="center"><image src="image/1dockerfile-node.png"></p>
+<p aling="center"><image src="image/1api-node-1.png"></p>
+<p aling="center"><image src="image/1api-node-2.png"></p>
 
 Agora para adicionar o ip do container rode o comando:
 ```
@@ -105,7 +105,7 @@ Para ver a imagem basta:
 sudo docker image ls 
 ```
 
-<p aling="center"><image src="image/docker-image.png"></p>
+<p aling="center"><image src="image/1docker-image.png"></p>
 
 Rodando o container na porta 9002 mapeando:
 ```
@@ -115,13 +115,13 @@ docker run -d -v $(pwd)/api:/home/node/app -p 9002:9002 --link dbfaeterj --rm --
 Criando docker-compose (defini como cada container deve se comportar dentro da aplicação):
 Volumes defini para qual pasta eu quero refletir minhas alterações
 
-<p aling="center"><image src="image/compose.png"></p>
+<p aling="center"><image src="image/1compose.png"></p>
 
 Instalando nodemon:
 ```
 npm install nodemon
 ```
-<p aling="center"><image src="image/nodemon.png"></p>
+<p aling="center"><image src="image/1nodemon.png"></p>
 
 Utilizando docker compose:
 ```
@@ -132,7 +132,7 @@ sudo docker-compose up
 
 Estrutura do projeto
 
-<p aling="center"><image src="image/estrutura.png"></p>
+<p aling="center"><image src="image/1estrutura.png"></p>
 
 
 Resultado
